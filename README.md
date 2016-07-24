@@ -1,0 +1,1 @@
+# lagoasoft-aggregator
