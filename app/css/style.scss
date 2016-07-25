@@ -1,0 +1,18 @@
+@import "search-bar";
+@import "user-card";
+
+.container {
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+#search {
+    margin-bottom: 15px;
+}
+
+.best-match {
+    background: rgba(255, 205, 0, 0.16);
+}

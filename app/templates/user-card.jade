@@ -1,0 +1,17 @@
+div.row
+    div.profile-picture.col-sm-4
+        img(ng-src="{{$ctrl.user.picture}}")
+    div.profile-details.col-sm-8
+        a.user-name(
+            ng-bind="$ctrl.user.name"
+            ng-href="{{$ctrl.user.profile_link}}"
+        )
+        br
+        a(
+            ng-bind="$ctrl.user.website"
+            ng-href="{{$ctrl.user.website}}"
+        )
+        br
+        span(ng-bind="$ctrl.user.meaningful_value")
+        br
+        span(ng-bind="$ctrl.user.location")

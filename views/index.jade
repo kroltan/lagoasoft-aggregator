@@ -1,0 +1,34 @@
+extends layout
+
+block append js
+    script(src="/js/index.js")
+
+block content
+    div.navbar.navbar-default
+        h1.navbar-brand Developer Profile Finder
+    div.container(ng-app="app" ng-controller="MainCtrl")
+        search-bar#search.col-md-12(query="query" on-submit="submit()")
+        h2.row(ng-if="loading") Loading...
+        div.results(ng-if="best_match || stackexchange.length || github.length")
+            div(ng-if="best_match")
+                h2.row
+                    |Best Match
+                div.row.best-match
+                    div.col-xs-6
+                        user-card.row(user="best_match.stackexchange")
+                    div.col-xs-6
+                        user-card.row(user="best_match.github")
+            div(ng-if="stackexchange.length > 1 || github.length > 1")
+                h2.row
+                    |All Results
+                div.row
+                    div.col-xs-6
+                        user-card.row(
+                            ng-repeat="user in stackexchange"
+                            user="user"
+                        )
+                    div.col-xs-6
+                        user-card.row(
+                            ng-repeat="user in github"
+                            user="user"
+                        )

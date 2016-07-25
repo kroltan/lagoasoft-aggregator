@@ -1,0 +1,14 @@
+search-bar {
+    form {
+        display: flex;
+        flex-direction: row;
+
+        & > input {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        & > button {
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+form.row(ng-submit="$ctrl.onSubmit({})")
+    input.form-control(
+        type="text"
+        placeholder="Search"
+        ng-model="$ctrl.query"
+    )
+    button.btn.btn-primary(type="submit")
+        i.glyphicon.glyphicon-search.icon-white
