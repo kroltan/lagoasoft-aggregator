@@ -11,20 +11,20 @@ let app = express();
 let env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
-app.locals.PWD = process.cwd();
 
 // view engine setup
 
-app.set('views', path.join(app.locals.PWD, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(app.locals.PWD, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", require("./routes/index"));
 app.use("/search", require("./routes/search"));
