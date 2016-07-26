@@ -133,4 +133,11 @@ module.exports = function (grunt) {
         'develop',
         'watch'
     ]);
+
+    grunt.registerTask("build", [
+        "browserify",
+        "sass",
+        "pug",
+
+    ]);
 };
