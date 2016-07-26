@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node --harmony --use_strict --harmony_generators ./bin/www"
+    "start": "node --harmony ./bin/www"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.9.0",
