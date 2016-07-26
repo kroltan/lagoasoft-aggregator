@@ -49,13 +49,13 @@ function userCompareNames(stack, github) {
     for (let i = stack.length - 1; i >= 0; i--) {
         let se_user = stack[i];
         let se_display_name = se_user.display_name.toLowerCase();
-        let se_url_name = se_user.link.split("/").pop();
+        let se_url_name = se_user.link.toLowerCase().split("/").pop();
 
         for (var j = github.length - 1; j >= 0; j--) {
             let gh_user = github[j];
 
-            if (gh_user.login == se_display_name
-                || gh_user.login == se_url_name) {
+            if (gh_user.login === se_display_name
+                || gh_user.login === se_url_name) {
 
                 return {
                     stack: se_user,
@@ -95,14 +95,13 @@ function normalizeGithubUser(user) {
 
 router.get('/', (req, res) => {
     const result_count = 5;
-    let name = req.query.name;
+    let name = req.query.name.trim().toLowerCase();
     Promise.join(
         findStackUsers(name, result_count),
         findGithubUsers(name, result_count),
         (stack, github) => ({stack, github})
     )
     .then(data => {
-        console.log(data)
         let best_match = userCompareNames(data.stack, data.github);
         return res.send({
             best_match: best_match? {

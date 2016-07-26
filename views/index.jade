@@ -18,7 +18,7 @@ block content
                         user-card.row(user="best_match.stackexchange")
                     div.col-xs-6
                         user-card.row(user="best_match.github")
-            div(ng-if="stackexchange.length > 1 || github.length > 1")
+            div(ng-if="!best_match || stackexchange.length > 1 || github.length > 1")
                 h2.row
                     |All Results
                 div.row
