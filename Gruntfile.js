@@ -138,6 +138,5 @@ module.exports = function (grunt) {
         "browserify",
         "sass",
         "pug",
-
     ]);
 };
