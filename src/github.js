@@ -1,3 +1,4 @@
+"use strict";
 let GitHub = require("github");
 
 module.exports = new GitHub({

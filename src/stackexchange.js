@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Could not find any decent SE API clients for node,
  * so I made this ridiculously minimal wrapper.
